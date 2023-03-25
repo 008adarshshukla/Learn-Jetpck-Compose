@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
 
 
-
 class TextBootcamp : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,15 +28,23 @@ class TextBootcamp : ComponentActivity() {
 }
 
 @Composable
-fun ContentView () {
+fun ContentView() {
     Column() {
-        Text(text = "I adarsh shukla",
+        Text(
+            text = "I adarsh shukla",
             fontFamily = FontFamily.Cursive,
             color = Color.Yellow,
             fontWeight = FontWeight(16),
             fontSize = 20.sp,
-            style = TextStyle(textDecoration =
-            TextDecoration.Underline)
+            style = TextStyle(
+                textDecoration =
+                TextDecoration.combine(
+                    listOf(
+                        TextDecoration.Underline,
+                        TextDecoration.LineThrough
+                    )
+                )
+            )
         )
     }
 }

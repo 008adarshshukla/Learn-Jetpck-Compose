@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
+            ButtonBootcampComposable()
         }
     }
 }
@@ -45,7 +45,7 @@ fun HomeView() {
 @Preview
 @Composable
 fun DefaultPreview() {
-    ShapesBootcampComposable()
+    ButtonBootcampComposable()
 }
 /*
 Concept of Composition and Recomposition-
