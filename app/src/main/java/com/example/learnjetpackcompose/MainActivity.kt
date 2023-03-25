@@ -37,15 +37,15 @@ fun HomeView() {
                 //.padding(10.dp)
                 .background(color = Color.Green)
                 .padding(10.dp)
-                .offset(x = 20.dp)
+                //.offset(x = 20.dp)
         )
     }
 }
 
 @Preview
 @Composable
-fun Mypreview() {
-    HomeView()
+fun DefaultPreview() {
+    ShapesBootcampComposable()
 }
 /*
 Concept of Composition and Recomposition-
