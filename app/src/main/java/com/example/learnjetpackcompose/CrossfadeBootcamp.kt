@@ -1,6 +1,7 @@
 package com.example.learnjetpackcompose
 
 import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.TweenSpec
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -21,7 +22,9 @@ fun CrossfadeBootacmpComposbale() {
         mutableStateOf(false)
     }
 
-    Crossfade(targetState = showSecondaryBottomBar) { show ->
+    Crossfade(targetState = showSecondaryBottomBar,
+        animationSpec = TweenSpec()) {
+            show ->
         Scaffold(
             floatingActionButton = {
                 FloatingActionButton(onClick = {
