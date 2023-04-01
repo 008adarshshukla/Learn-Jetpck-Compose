@@ -22,7 +22,7 @@ fun launchCoroutine() {
 
         //creates a corouitne that runs on same thread as that of parent
         // coroutine builder (runBlocking)
-        val job: Job = launch { //Main thread
+        val kreiva: Job = launch { //Main thread
             println(
                 "Fake task stars on ${
                     Thread.currentThread()
@@ -45,7 +45,7 @@ fun launchCoroutine() {
         }
 
         //runs on main thread wait for coroutine to finish
-        job.join()
+        kreiva.join()
         //runs on main thread
         println("Program ends on ${Thread.currentThread().name}")
     }

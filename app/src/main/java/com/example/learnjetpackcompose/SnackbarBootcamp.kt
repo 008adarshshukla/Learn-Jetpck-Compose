@@ -27,6 +27,9 @@ fun SnackbarBootcampComposable() {
     val doneSnackbarHostState = remember {
         SnackbarHostState()
     }
+//The rememberCoroutineScope() function creates a CoroutineScope object that can be used to launch and manage coroutines. The CoroutineScope is a coroutine context that provides a way to launch new coroutines and manage their lifecycle. It also allows for cancellation of all the coroutines that were launched within the scope.
+//
+//By calling rememberCoroutineScope() within a Composable, you are creating a scope that is tied to the lifecycle of that Composable. This means that any coroutines launched within that scope will automatically be cancelled when the Composable is removed from the screen, preventing any potential memory leaks or unwanted behavior.
     val coroutineScope = rememberCoroutineScope()
 
     Scaffold(
