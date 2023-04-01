@@ -1,4 +1,4 @@
-package com.example.learnjetpackcompose
+package com.example.learnjetpackcompose.coroutineBootcamp
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
