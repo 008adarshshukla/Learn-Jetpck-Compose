@@ -14,13 +14,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.example.learnjetpackcompose.NavigationBootcamp.NavigationHomeScreen
+import com.example.learnjetpackcompose.NavigationBootcamp.SetupNavGraph
 import com.example.learnjetpackcompose.ui.theme.LearnJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
+
+    lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            CardsBootcampComposable()
+            navController = rememberNavController()
+            SetupNavGraph(navControlller = navController)
         }
     }
 }
@@ -45,7 +52,7 @@ fun HomeView() {
 @Preview
 @Composable
 fun DefaultPreview() {
-    CardsBootcampComposable()
+    CardsBootcampComposable ()
 }
 /*
 Concept of Composition and Recomposition-
