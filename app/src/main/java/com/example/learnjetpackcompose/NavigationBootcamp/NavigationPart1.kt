@@ -12,9 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 
 /*
 Components of Navigation -
@@ -34,7 +36,7 @@ fun NavigationHomeScreen(navControlller: NavHostController) {
     ) {
         Text(
             modifier = Modifier.clickable {
-                navControlller.navigate(route = Screens.Details.route)
+                navControlller.navigate(route = Screens.Details.passNameAndId(10, "adarsh"))
             },
             text = "Home Screen",
             color = MaterialTheme.colorScheme.primary,
@@ -145,10 +147,21 @@ fun SetupNavGraph(navControlller: NavHostController) {
         //details of ther destinations---
 
         //Details of the details Destination.
-        composable(route = Screens.Details.route) {
+        composable(
+            route = Screens.Details.route,
+            arguments = listOf(
+                navArgument(DETAIL_ARGUMENT_KEY) {
+                    type = NavType.IntType
+                },
+                navArgument(DETAIL_ARGUMENT_KEY2) {
+                    type = NavType.StringType
+                }
+            )
+        ) {
             NavigationDetailsScreen(navControlller = navControlller)
         }
 
+        //for Deatils2 Screen.
         composable(route = Screens.Details2.route) {
             NavigationDetailsScreen2(navControlller = navControlller)
         }
@@ -184,4 +197,14 @@ However, it is possible to change this behavior and add the start destination to
 again by using the popUpTo and inclusive parameters to clear the backstack up to the start
 destination, and then navigate to the start destination again. This will create a new instance of
 the start destination and add it to the backstack as the first destination.
+ */
+
+/*
+Passing arguments from one screen to another -
+
+1.Add arguments to be passed to to each screen in in Screens class as "/{parameter_name}
+2. Inside the NavHost for the particular composable add the parameter called "arguements" which
+accepts the list of arguments to be passed. Each arguement takes an argument builder lambda which
+ has the type of the argument passed.
+
  */
